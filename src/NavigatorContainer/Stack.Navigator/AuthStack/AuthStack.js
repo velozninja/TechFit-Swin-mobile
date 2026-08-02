@@ -1,17 +1,17 @@
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import RegisterScreen from '../../../screens/RegisterScreen/index.js';
+import TermsScreen from '../../../screens/TermsScreen/index.js';
 
 const Stack = createNativeStackNavigator();
 
-export default function RegisterScreen() {
+export default function AuthStack() {
     return (
-        <Stack.Navigator>
-            <Stack.Screen
-             name="Register" 
-            component={RegisterScreen} />
-            <Stack.Screen
-             name="terms" 
-            component={TermsScreen} />
-        </Stack.Navigator>
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name="Register" component={RegisterScreen} />
+                <Stack.Screen name="terms" component={TermsScreen} />
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 }

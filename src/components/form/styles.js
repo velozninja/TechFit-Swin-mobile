@@ -42,7 +42,7 @@ export const styles = StyleSheet.create(
 
         textTop:{
             color: "#000000",
-            fontSize: 30,
+            fontSize: 25,
             fontWeight: 'bold',
             textAlign: 'center',
             AlignItems: 'center',
@@ -52,8 +52,8 @@ export const styles = StyleSheet.create(
             backgroundColor: "#2196F3",
             borderRadius: 10,
             padding: 10,
-            marginTop: 20,
-            width: "100%",
+            marginTop: 15,
+            width: "90%",
         },
         buttonText:{
             color: "#fff",
