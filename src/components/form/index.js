@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import { View, Text, TextInput, Keyboard, Pressable, TouchableOpacity} from 'react-native';
 import { styles} from './styles';
+import { useNavigation } from '@react-navigation/native';
 import Checkbox from "../checkbox";
 
 
 
 export default function Form(props) {
+  const navigation = useNavigation();
   
 
   return (
@@ -40,9 +42,10 @@ export default function Form(props) {
 
       <Text style={styles.text}>Aceita os termos de serviço?</Text>
       <Checkbox isinfo={props.aceitaTermos} Setinfo={props.setAceitaTermos} />
-      <TouchableOpacity style={styles.button} onPress={() => console.log('Form submitted')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('terms')}>
         <Text style={styles.buttonText}>Termos de serviço e Política de Privacidade</Text>
       </TouchableOpacity>
+        <Text style={styles.text}> </Text>
 
     </Pressable>
   );

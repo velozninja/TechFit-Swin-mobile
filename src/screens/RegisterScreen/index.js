@@ -29,6 +29,7 @@ export default function LoginScreen() {
                 setIsPersonal={(value) => setFormData({...formData, isPersonal: value})}
                 aceitaTermos={formData.aceitaTermos}
                 setAceitaTermos={(value) => setFormData({...formData, aceitaTermos: value})}
+
             />
         </View>
     )
