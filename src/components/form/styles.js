@@ -48,16 +48,38 @@ export const styles = StyleSheet.create(
             AlignItems: 'center',
             marginBottom: 20,
         },
-        button:{
+        buttonRow:{
+            width: "90%",
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginTop: 10,
+            alignSelf: 'center',
+        },
+        buttonRowItem:{
+            width: "48%",
             backgroundColor: "#2196F3",
             borderRadius: 10,
-            padding: 10,
-            marginTop: 15,
-            width: "90%",
+            paddingVertical: 10,
+            justifyContent: 'center',
+            alignItems: 'center',
         },
+        button:{
+            width: "95%",
+            alignSelf: 'center',
+            marginTop: 20,
+            backgroundColor: "#2196F3",
+            borderRadius: 12,
+            paddingVertical: 14,
+            paddingHorizontal: 12,
+            minHeight: 50,
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+     
+
         buttonText:{
             color: "#fff",
-            fontSize: 16,
+            fontSize: 11,
             fontWeight: 'bold',
             textAlign: 'center',
         }

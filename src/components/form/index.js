@@ -12,7 +12,7 @@ export default function Form(props) {
 
   return (
     <Pressable style={styles.box} onPress={Keyboard.dismiss}>
-      <Text style={styles.textTop}>Formulário de Cadastro</Text>
+      <Text style={styles.textTop}>{props.formulario}</Text>
       <Text style={styles.text}>Nome</Text>
       <TextInput
         placeholder="coloque seu nome de usuario"
@@ -42,10 +42,19 @@ export default function Form(props) {
 
       <Text style={styles.text}>Aceita os termos de serviço?</Text>
       <Checkbox isinfo={props.aceitaTermos} Setinfo={props.setAceitaTermos} />
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('terms')}>
-        <Text style={styles.buttonText}>Termos de serviço e Política de Privacidade</Text>
+      <View style={styles.buttonRow}>
+        <TouchableOpacity style={styles.buttonRowItem} onPress={() => navigation.navigate('terms')}>
+          <Text style={styles.buttonText}>Termos</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.buttonRowItem} onPress={() => navigation.navigate(props.Screen)}>
+          <Text style={styles.buttonText}>{props.RegisterAndLogin}</Text>
+        </TouchableOpacity>
+      </View>
+
+      <TouchableOpacity style={styles.button} onPress={props.func}>
+        <Text style={styles.buttonText}>{props.textbutton}</Text>
       </TouchableOpacity>
-        <Text style={styles.text}> </Text>
 
     </Pressable>
   );
