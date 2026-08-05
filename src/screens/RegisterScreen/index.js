@@ -3,22 +3,30 @@ import Title from "../../components/title";
 import Styles from "./styles";
 import { View, Text } from 'react-native';
 import React, { useState } from "react";
+import embreve from "../../utils/emBreve";
 
 
-export default function LoginScreen() {
+export default function RegisterScreen() {
+    
     const [formData, setFormData] = useState({
         nome: '',
         senha: '',
         email: '',
         isPersonal: false,
         aceitaTermos: false,
+        formulario: "Formulario de cadastro",
+        Button: "Já tem uma conta? Fazer login",
+        screen: "Login",
+        buttontext: "Cadastrar"
+        
     }); 
     return(
         <View >
            
-            <Title />
+            <Title title = "Bem vindo ao TechFit-Swin" />
 
             <Form 
+                formulario ={formData.formulario}
                 nome={formData.nome}
                 setNome={(value) => setFormData({...formData, nome: value})}
                 senha={formData.senha}
@@ -29,6 +37,11 @@ export default function LoginScreen() {
                 setIsPersonal={(value) => setFormData({...formData, isPersonal: value})}
                 aceitaTermos={formData.aceitaTermos}
                 setAceitaTermos={(value) => setFormData({...formData, aceitaTermos: value})}
+                RegisterAndLogin={formData.Button}
+                Screen={formData.screen}
+                func={embreve}
+                textbutton={formData.buttontext}
+
 
             />
         </View>
