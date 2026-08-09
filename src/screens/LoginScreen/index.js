@@ -34,7 +34,8 @@ export default function LoginScreen() {
         setAceitaTermos={(value) => setFormData({ ...formData, aceitaTermos: value })}
         RegisterAndLogin={formData.Button}
         Screen={formData.screen}
-        func ={embreve}
+        func1={embreve}
+        func2={embreve} 
         textbutton={formData.buttontext}
       />
     </View>

@@ -52,7 +52,38 @@ export default function Form(props) {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.button} onPress={props.func}>
+      <TouchableOpacity
+        style={[styles.button, props.disabled && styles.buttonDisabled]}
+        onPress={async () => {
+          if (props.disabled) {
+            return;
+          }
+
+          let success = false;
+
+          try {
+            if (typeof props.func1 === 'function') {
+              const result = props.func1();
+              success = result instanceof Promise ? await result : result;
+              success = success === true;
+            }
+          } catch (Err) {
+            alert('Não foi possível realizar a ação');
+            success = false;
+          }
+
+          if (success) {
+            try {
+              if (typeof props.func2 === 'function') {
+                await props.func2();
+              }
+            } catch (Err) {
+              alert('Não foi possível concluir a ação');
+            }
+          }
+        }}
+        disabled={props.disabled}
+      >
         <Text style={styles.buttonText}>{props.textbutton}</Text>
       </TouchableOpacity>
 

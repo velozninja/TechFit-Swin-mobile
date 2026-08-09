@@ -75,6 +75,9 @@ export const styles = StyleSheet.create(
             justifyContent: 'center',
             alignItems: 'center',
         },
+        buttonDisabled:{
+            opacity: 0.65,
+        },
      
 
         buttonText:{
