@@ -1,7 +1,7 @@
 
 import { Alert } from "react-native";
 import { API_URL } from "@env";
-
+import * as SecureStore from "expo-secure-store";
 export default async function AuthRegisterServiceApi(email, senha, nome, isPersonal) {
   if (!API_URL) {
     Alert.alert("Erro", "API_URL não configurada");
@@ -29,21 +29,21 @@ export default async function AuthRegisterServiceApi(email, senha, nome, isPerso
       }
     );
 
-    console.log("STATUS:", res.status);
 
     const responseText = await res.text();
-    console.log("RESPOSTA:", responseText);
-
+  
     if (!res.ok) {
-      Alert.alert("Erro", `Erro ao criar conta (${res.status})`);
+      Alert.alert("Erro", `Erro ao cadastrar conta (${res.status})`);
       return false;
     }
+    
 
-    Alert.alert("Sucesso", "Conta criada com sucesso");
+    Alert.alert("Sucesso", "Conta cadastrada com sucesso");
+
     return true;
 
   } catch (error) {
-    console.log("ERRO FETCH:", error);
+ 
     Alert.alert("Erro", "Não foi possível conectar ao servidor");
     return false;
   }

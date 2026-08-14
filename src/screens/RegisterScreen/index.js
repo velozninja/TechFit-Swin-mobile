@@ -3,7 +3,7 @@ import Title from "../../components/title";
 import Styles from "./styles";
 import { View, Alert } from 'react-native';
 import React, { useState } from "react";
-import AuthRegisterServiceApi from "../../services/authRegisterApi";
+import AuthRegisterServiceApi from "../../services/api/authRegisterApi";
 import { useNavigation } from "@react-navigation/native";
 
 export default function RegisterScreen() {
