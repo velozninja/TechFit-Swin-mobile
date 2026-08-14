@@ -3,6 +3,7 @@ import Form from "../../components/form";
 import Title from "../../components/title";
 import { useState } from "react";
 import embreve from "../../utils/emBreve";
+import authLoginApi from "../../services/api/authLoginApi";
 
 export default function LoginScreen() {
   const [formData, setFormData] = useState({
@@ -16,6 +17,24 @@ export default function LoginScreen() {
     screen:"Register",
     buttontext:"Login"
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleLogin = async () => {
+    if (isSubmitting) {
+      return false;
+    }
+
+    setIsSubmitting(true);
+    const success = await authLoginApi(
+      formData.email,
+      formData.senha,
+      formData.nome,
+      formData.isPersonal
+    );
+    setIsSubmitting(false);
+
+    return success;
+  };
 
   return (
     <View>
@@ -34,9 +53,10 @@ export default function LoginScreen() {
         setAceitaTermos={(value) => setFormData({ ...formData, aceitaTermos: value })}
         RegisterAndLogin={formData.Button}
         Screen={formData.screen}
-        func1={embreve}
-        func2={embreve} 
-        textbutton={formData.buttontext}
+        func1={handleLogin}
+        func2={embreve}
+        textbutton={isSubmitting ? 'Logando...' : formData.buttontext}
+        disabled={isSubmitting}
       />
     </View>
   );
