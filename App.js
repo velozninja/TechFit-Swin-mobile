@@ -1,7 +1,11 @@
-import AuthStack from './src/NavigatorContainer/Stack.Navigator/AuthStack/AuthStack.js';
-import LoginScreen from './src/screens/LoginScreen/index.js';
+import AppNavigator from './src/navigator/AppNavigator.js';
+import PersonalHomeScreen from './src/screens/PersonalHomeScreen/index.js';
+import AuthContextProvider from './src/services/auth/AuthContext.js';
 
 export default function App() {
-  return <AuthStack/>;
+  return (
+    <PersonalHomeScreen></PersonalHomeScreen>
+ 
+  );
 }
 

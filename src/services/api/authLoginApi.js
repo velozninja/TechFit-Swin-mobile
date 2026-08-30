@@ -1,7 +1,7 @@
 
 import { Alert } from "react-native";
 import { API_URL } from "@env";
-import { saveToken } from "../TokenService";
+import { saveToken } from "../auth/TokenService";
 
 
 export default async function authLoginApi(email, senha, nome, isPersonal) {
