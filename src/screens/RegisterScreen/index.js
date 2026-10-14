@@ -55,7 +55,7 @@ export default function RegisterScreen() {
 
     return(
         <View>
-            <Title title="Bem vindo ao TechFit-Swin" />
+            <Title>Bem vindo ao TechFit-Swin</Title>
             <Form 
                 formulario={formData.formulario}
                 nome={formData.nome}

@@ -14,7 +14,6 @@ export default function AppNavigator(){
     <NavigationContainer>
         {token ? (
             <EmbreveScreen></EmbreveScreen>
-            
 
         ): (
             <AuthStack></AuthStack>
