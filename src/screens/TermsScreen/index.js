@@ -35,7 +35,7 @@ O TechFit-Swin poderá armazenar esses dados para possibilitar o funcionamento d
                 <Text style={styles.TextSubtitle}>Privacidade</Text>
                 <Text style={styles.TextContent}>{`O tratamento dos dados pessoais é realizado conforme a Política de Privacidade do TechFit-Swin e em conformidade com a Lei Geral de Proteção de Dados (LGPD). Só serão coletados os dados de email, senha, nome de usuario.E Para possibilitar o funcionamento do aplicativo, os treinos cadastrados são associados à conta do usuário correspondente. Essa associação é utilizada exclusivamente para identificar o proprietário dos treinos e permitir seu gerenciamento pelo aluno e pelo personal trainer autorizado.  `}</Text>
                 <Text style={styles.TextSubtitle}>{`Compartilhamento de dados`}</Text>
-                <Text style={styles.TextContent}>{`O endereço de e-mail do aluno poderá ser compartilhado exclusivamente com o personal trainer responsável pelo seu acompanhamento, para permitir sua identificação e o gerenciamento dos treinos.
+                <Text style={styles.TextContent}>{`Nenhuma informação sensivel deve ser compartilhada, como email ou senha, para permitir sua identificação e o gerenciamento dos treinos compartilhe a tag compartilhavél disponibilizada.
 
 Nenhum outro dado pessoal será compartilhado com outros usuários, exceto quando exigido por lei ou mediante autorização do titular`}</Text>
                 <Text style={styles.TextSubtitle}>{`Segurança dos Dados`}</Text>

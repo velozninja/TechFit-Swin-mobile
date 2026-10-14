@@ -1,62 +1,84 @@
-import React from "react";
-import { Ionicons } from "@expo/vector-icons";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { styles } from "./styles";
+
+import ViweBaseSheet from "../../components/ScrollViewBaseSheet";
+
+import BoxTitle from "../../components/boxTitle";
+import Title from "../../components/title";
+import BoxOptions from "../../components/BoxOptions";
+import ButtonForBoxOptions from "../../components/ButtonForBoxOptions";
+
 
 export default function AlunoHomeScreen() {
-    const actions = [
-        { label: "meus\ntreinos", icon: "▶" },
-        { label: "agenda", icon: "□" },
-        { label: "personal", icon: "person-outline", isVectorIcon: true }
-    ];
-
     return (
-        <ScrollView style={styles.mainView} showsVerticalScrollIndicator={false}>
-            <View style={styles.headerContainer}>
-                <View style={styles.greetingRow}>
-                    <View>
-                        <Text style={styles.eyebrow}>ÁREA DO ALUNO</Text>
-                        <Text style={styles.title}>Olá, atleta</Text>
-                    </View>
+        <ViweBaseSheet>
+            <BoxTitle>
+                <Title>Bem vindo Aluno</Title>
+            </BoxTitle>
+            <BoxOptions>
+        
+                <ButtonForBoxOptions
+                    icon="person"
+                    text="Perfil"
+                    func={() => console.log("Perfil")}>
+          
 
-                </View>
-                <Text style={styles.subtitle}>Pronto para dar mais uma braçada?</Text>
-            </View>
+                </ButtonForBoxOptions>
+                <ButtonForBoxOptions
+                  icon="water"
+                  text="Treinos"
+                  func={()=> console.log("treinos")} >
 
-            <View style={styles.contentCard}>
-                <View style={styles.sectionHeader}>
-                    <Text style={styles.sectionLabel}>Seu próximo treino</Text>
-                    <Text style={styles.dateLabel}>HOJE</Text>
-                </View>
+                </ButtonForBoxOptions>
+                <ButtonForBoxOptions
+                  icon="barbell"
+                  text='Teinador'
+                  func={() => console.log("treinador")}
+                  
+
+                ></ButtonForBoxOptions>
+                <ButtonForBoxOptions
+                   icon='stats-chart'
+                   text='Estatisticas'
+                   func={() => console.log("estatisticas")}
+                ></ButtonForBoxOptions>
+                <ButtonForBoxOptions
+                   icon='receipt-outline'
+                   text='Histórico'
+                   func={() => console.log("Historico")}
+                >
+
+                </ButtonForBoxOptions>
+                <ButtonForBoxOptions
+                   icon='settings-outline'
+                   text='Configuração'
+                   func={()=> console.log("Configuração")} 
+                    
+                   
+                >
+
+                </ButtonForBoxOptions>
+                
+         
+                
+
+            </BoxOptions>
+
+
+
+
 
             
 
-                <Text style={styles.sectionLabel}>Ações rápidas</Text>
-                <ScrollView
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={styles.actionRow}
-                >
-                    {actions.map((action) => (
-                        <TouchableOpacity
-                            key={action.label}
-                            activeOpacity={0.85}
-                            style={styles.actionButton}
-                        >
-                            <View style={styles.iconCircle}>
-                                {action.isVectorIcon ? (
-                                    <Ionicons name={action.icon} size={30} color="#ffffff" />
-                                ) : (
-                                    <Text style={styles.iconText}>{action.icon}</Text>
-                                )}
-                            </View>
-                            <Text style={styles.textAction}>{action.label}</Text>
-                        </TouchableOpacity>
-                    ))}
-                </ScrollView>
-            </View>
 
- 
-        </ScrollView>
+        
+
+
+        
+        </ViweBaseSheet>
+
     );
 }
+
+        
+
+        
+    

@@ -1,10 +1,13 @@
 import {View, Text} from 'react-native';
 import { styles } from './styles.js';
 
-export default function Title(props) {
+export default function Title({children}) {
     return(
-        <View>
-            <Text style={styles.Text}>{props.title}</Text>
-        </View>
+       
+        <Text style={styles.Text}>
+            {children}
+
+        </Text>
+ 
     )
 }

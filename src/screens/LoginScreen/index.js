@@ -38,7 +38,7 @@ export default function LoginScreen() {
 
   return (
     <View>
-      <Title title="Bem vindo de volta ao TechFit-Swin" />
+      <Title>Bem vindo de volta ao TechFit-Swin</Title>
       <Form
         formulario={formData.formulario}
         nome={formData.nome}
